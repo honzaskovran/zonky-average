@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Selection from './components/Selection';
-import logo from './logo.svg';
+import Result from './components/Result';
 import './App.css';
 
 class App extends Component {
@@ -8,13 +8,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Průměrná výše půjčky na zonky.cz podle ratingu</h1>
           <Selection/>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Result/>
       </div>
     );
   }
