@@ -1,0 +1,19 @@
+.Result-wrapper {
+  margin: 50px 15px;
+  font-size: 2.5rem;
+}
+
+.loader {
+  width: 250px;
+  height: auto;
+  animation: Loader-spin infinite 0.5s ease-in-out;
+}
+
+@keyframes Loader-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.highlighted {
+  color: #37b1bf;
+}

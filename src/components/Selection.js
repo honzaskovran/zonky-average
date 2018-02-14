@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { findRating } from '../actions/rating';
+import './Selection.css';
 
 const ratings = [
   {

@@ -1,0 +1,18 @@
+button {
+  color: #e75637;
+  background: #fff;
+  border: 2px solid #e75637;
+  padding: 0;
+  margin: 5px;
+  width: 4.8rem;
+  height: 5.1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all linear 100ms;
+  outline: none;
+}
+
+button:hover {
+  transform: translate(.1rem,.1rem);
+  box-shadow: 1px 1px 0 0 #d8d8d8;
+}

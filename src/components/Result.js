@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import './Result.css';
+import zonky from './zonky.svg';
 
 const mapStateToProps = state => ({
   isLoading: state.rating.loading,
@@ -8,21 +10,25 @@ const mapStateToProps = state => ({
 });
 
 const formatMoney = n => (
-  n.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1 ')
+  n.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1 ').replace('.', ',')
 );
 
 const Result = props => {
-  if(props.selectedRating === null) {
-    return <div>Choose rating</div>
-  }
+  return (
+    <div className="Result-wrapper">
+      {props.selectedRating === null &&
+          <div>Vyberte si rating</div>
+      }
 
-  if(props.isLoading === true) {
-    return <div>Loading...</div>
-  }
+      {props.isLoading === true &&
+        <img className="loader" src={zonky} alt="Loader"/>
+      }
 
-  if(props.averagePrice !== null) {
-    return <div>{formatMoney(props.averagePrice)}</div>
-  }
+      {props.averagePrice !== null &&
+      <div>Průměrná výše úvěru s ratingem <span className="highlighted">{props.selectedRating}</span> je <span className="highlighted">{formatMoney(props.averagePrice)}&nbsp;Kč</span></div>
+      }
+    </div>
+  )
 };
 
 export default connect(mapStateToProps, {})(Result);
